@@ -16,8 +16,8 @@ catfile = dict()
 def categories(csvfile):
     for row in csvfile:
         if row["violation_category"] not in catfile:
-            catfile[row["violation_category"]] = set()
-    	catfile[row["violation_category"]].add(row["violation_date"]) 
+            catfile[row["violation_category"]] = [] 
+    	catfile[row["violation_category"]].append(row["violation_date"]) 
     return catfile
 
 
